@@ -9,9 +9,10 @@ if __name__ == '__main__':
         testKey = str(hex(i)[2:])
         while len(testKey)<64:
             testKey = "0"+testKey
+        hexNum = testKey
         testKey = testKey.decode('hex')
 
         cipher = AES.new(testKey, AES.MODE_CBC, iv)
         #Second to last decryption appears to be correct one
-        print cipher.decrypt(ciphertext)
+        print cipher.decrypt(ciphertext), hexNum, "\n"
             
