@@ -6,7 +6,7 @@ if __name__ == '__main__':
     iv = "0" * 32
     iv = iv.decode('hex')
     for i in range(0, 32):
-        last_byte = str(hex(i)[2:])
+        last_byte = hex(i)[2:]
         key = "0" * (64-len(last_byte)) + last_byte
 
         cipher = AES.new(key.decode('hex'), AES.MODE_CBC, iv)
