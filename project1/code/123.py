@@ -3,10 +3,12 @@ from utils import read_file
 
 if __name__ == '__main__':
     ciphertext = read_file('../1.2.3_aes_weak_ciphertext.hex').decode('hex')
+    iv = "0" * 32
+    iv = iv.decode('hex')
+    for i in range(0, 32):
+        last_byte = hex(i)[2:]
+        key = "0" * (64-len(last_byte)) + last_byte
 
-    result = []
-    iv = chr(0) * 16
-    for i in range(32):
-        key = chr(0) * 15 + chr(i)
-        cipher = AES.new(key, AES.MODE_CBC, iv)
-        print cipher.decrypt(ciphertext)
+        cipher = AES.new(key.decode('hex'), AES.MODE_CBC, iv)
+        # Second to last decryption appears to be correct one
+        print cipher.decrypt(ciphertext), key, "\n"
