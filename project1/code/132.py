@@ -1,6 +1,3 @@
-# wha_collision.py
-# Bob King and Xuefeng Zhu
-# Implenment weak hash algorithm, and prove the vulnerability
 from utils import read_file
 import string
 import random
