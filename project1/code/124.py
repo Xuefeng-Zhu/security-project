@@ -14,4 +14,4 @@ if __name__ == '__main__':
     ciphertext = int(read_file("../1.2.4_RSA_ciphertext.hex"), 16)
 
     decryptedtext = fasterExponent(ciphertext, d, n)
-    print decryptedtext, "But is it prime???:", number.isPrime(decryptedtext)
+    print hex(decryptedtext), "But is it prime???:", number.isPrime(decryptedtext)
