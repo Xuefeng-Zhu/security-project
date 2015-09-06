@@ -12,4 +12,4 @@ if __name__ == '__main__':
         (HASH_SIZE - len(perturbed_string)) + perturbed_string
     result = [input_bin[i] != perturbed_string[i]
               for i in range(HASH_SIZE)]
-    print result.count(True)
+    print hex(result.count(True))
