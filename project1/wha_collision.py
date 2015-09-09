@@ -1,12 +1,20 @@
 # wha_collision.py
 # Bob King and Xuefeng Zhu
 # Implenment weak hash algorithm, and prove the vulnerability
-from utils import read_file
 import string
 import random
 
 
+def read_file(file_name):
+    with open(file_name) as f:
+        file_content = f.read().strip()
+    return file_content
+
+
 def wha(in_str):
+    """
+    The wha hash function
+    """
     bin_array = bytearray(in_str)
 
     hexdata1 = int('CC', 16)
@@ -28,11 +36,11 @@ if __name__ == '__main__':
     # assert wha("Hello world!") == "0x50b027cf"
     # assert wha("I am Groot.") == "0x57293cbb"
 
-    jeopardyQ = read_file("../1.3.2_input_string.txt")
+    jeopardyQ = read_file("1.3.2_input_string.txt")
     jeopardyHash = wha(jeopardyQ)
-
     print jeopardyHash
 
+    # Try to find the 
     testHash = ""
     while (testHash != jeopardyHash):
         test = " PRESIDENTS NATIONAL HISTORIC SITE IN WEST BRANCH IOWA HAS A QUAKER MEETINGHOUSE ON THE GROUNDS"
