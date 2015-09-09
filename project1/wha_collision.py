@@ -40,7 +40,7 @@ if __name__ == '__main__':
     jeopardyHash = wha(jeopardyQ)
     print jeopardyHash
 
-    # Try to find the 
+    # Try to find the collision
     testHash = ""
     while (testHash != jeopardyHash):
         test = " PRESIDENTS NATIONAL HISTORIC SITE IN WEST BRANCH IOWA HAS A QUAKER MEETINGHOUSE ON THE GROUNDS"
