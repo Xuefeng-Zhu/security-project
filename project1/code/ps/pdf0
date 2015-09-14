@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm 0.pdf
+ps2pdf 0.ps
+xpdf 0.pdf

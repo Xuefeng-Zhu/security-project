@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Enter which number to test output for: "
+read num
+
+rm "$num".pdf
+ps2pdf "$num".ps
+xpdf "$num".pdf
