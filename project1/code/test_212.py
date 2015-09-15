@@ -8,7 +8,6 @@ def extend_query(query, command):
     token_query = query[:divider_pos]
     message_query = query[divider_pos + 1:]
     token = token_query.split('=')[1]
-    print token
     data_length = PASSWORD_LENGTH + len(message_query)
     padding_text = padding(data_length * 8)
 
@@ -16,7 +15,7 @@ def extend_query(query, command):
     md_hash.update(command)
     new_token = md_hash.hexdigest()
 
-    new_query = ''.join([message_query, padding_text, command])
+    new_query = ''.join([message_query, quote(padding_text), command])
     return (new_token, new_query)
 
 if __name__ == '__main__':
@@ -32,4 +31,4 @@ if __name__ == '__main__':
     result = extend_query(query_text, command)
     print result
     md_hash2 = md5(password+result[1])
-    print md_hash.hexdigest()
+    print md_hash2.hexdigest()

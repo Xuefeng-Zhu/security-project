@@ -19,12 +19,14 @@ def extend_query(query, command):
     data_length = PASSWORD_LENGTH + len(message_query)
     padding_text = padding(data_length * 8)
 
+    print token
+    print [token.decode('hex')] 
     md_hash = md5(state=token.decode('hex'), count=512)
     md_hash.update(command)
     new_token = md_hash.hexdigest()
 
     new_query = ''.join(
-        ['token=', new_token, message_query, quote(padding_text), command])
+        ['token=', new_token, '&', message_query, quote(padding_text), command])
     return new_query
 
 if __name__ == '__main__':
