@@ -1,4 +1,12 @@
-from decimal import *
+"""
+Implement Wiener' attack to find the private key for RSA
+Citation: we use sympy lib to solve the quadratic equation
+http://docs.sympy.org/dev/modules/solvers/solvers.html
+"""
+
+from sympy import Symbol
+from sympy.solvers import solve
+
 
 def read_file(file_name):
     with open(file_name) as f:
@@ -20,20 +28,20 @@ def check_kd(k, d, N, e):
     if d % 2 == 0:
         return False
 
-    N_factorization = (e * d - 1) / Decimal(k)
-    if int(N_factorization) != N_factorization:
+    if (e * d - 1) % k != 0:
         return False
+    N_factorization = (e * d - 1) / k
 
-    b = (N - int(N_factorization)) + 1
-    b = -b
-    c = N
-    tmp = Decimal(b * b - 4 * c).sqrt()
-    x_1 = ((-b) + tmp) / 2
-    x_2 = ((-b) - tmp) / 2
-    if int(x_1) != x_1 or int(x_2) != x_2:
+    # use sympy to solve the equation since the number is very large
+    # and hard to solve in pure python
+    x = Symbol('x')
+    roots = solve(x * x + (N + 1 - N_factorization) * x + N, x)
+    try:
+        x_1 = roots[0]
+        x_2 = roots[1]
+        return x_1 * x_2 == N
+    except:
         return False
-
-    return x_1 * x_2 == N
 
 
 def converge(N, e):
