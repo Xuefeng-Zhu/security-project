@@ -64,4 +64,5 @@ if __name__ == '__main__':
     ciphertext = int(read_file("../2.2_ciphertext.hex"), 16)
     d = converge(N, e)
     result = pow(ciphertext, d, N)
+    print result
     print hex(result)
