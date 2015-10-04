@@ -128,7 +128,7 @@ function transformCode(code) {
 		if (code[i] == '"') {
 			odd = !odd;
 			if (!odd) {
-				result = result.replace(acc, transformString(acc));
+				result = result.replace('"'+acc + '"', transformString(acc));
 				acc = ""
 			}
 		} else {
