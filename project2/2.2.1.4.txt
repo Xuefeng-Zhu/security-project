@@ -21,8 +21,3 @@ Name: proj2_xtra_cr3dit
 Version: 5.5.44-0ubuntu0.14.04.1
 Tables: foo,inject3_users,SECRETTABLE
 Secret: hunter2
-
-
-
-
-
