@@ -1,0 +1,1 @@
+The insecurity in the browser authentication to Facebook is by means of a mixed content. After the initial HTTPS handshake and connection, the browser and Facebook complete much communication through HTTP. In these HTTP GET request URIs are input such as "user","token", or "api_key" in plaintext. Also, in requests we can see the cookies that authenticate the user.

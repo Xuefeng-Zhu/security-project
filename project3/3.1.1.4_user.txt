@@ -1,0 +1,15 @@
+1. User connects to Facebook
+2. User searches for "z"
+3. User searches for "zak"
+4. User searches for "zaki"
+5. User searches for "zakir"
+6. User searches for "zakir d"
+7. User searches for "zakir du"
+8. User searches for "zakir dur"
+9. User searches for "zakir duru"
+10. User searches for "zakir durum"
+11. User clicks on result from search, "Zakir Durumeric" from Michigan and navigated to their page
+12. User begins to compose a message 
+13. User attaches a file to the message
+14. User checks their notifications
+15. User sends their message with the attachment and "My WiFi!"

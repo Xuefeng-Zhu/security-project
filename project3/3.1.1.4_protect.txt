@@ -1,0 +1,1 @@
+A user could protect themselves against this type of attack by ensuring that all communication is done through HTTPS instead of HTTP. There are addons to browsers and browser settings which can be set to always require a secure HTTPS connection. One such addon with this capability is NoScript for FireFox.
