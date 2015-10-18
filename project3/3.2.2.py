@@ -26,8 +26,8 @@ def process_packet(buf, ip_dict):
 
 def get_anomaly_ip(ip_dict):
     for (ip, count) in ip_dict.items():
-        if count[1] is 0 or count[0] >= 3 * count[1]:
-            print ip
+        if count[1] is 0 or count[0] > 3 * count[1]:
+            print ip, count[0], count[1]
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
