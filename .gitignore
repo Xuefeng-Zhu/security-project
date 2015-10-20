@@ -1,2 +1,3 @@
-*.pyc
+i*.pyc
 3_2.pcap
+3_2minify.pcap
