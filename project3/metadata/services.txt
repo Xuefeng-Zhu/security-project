@@ -1,0 +1,30 @@
+Client: 10.2.2.81	AC:29:3A:EB:74:D0
+22/tcp	open	ssh
+123/udp	open	ntp
+137/udp	open	netbios-ns
+138/udp	open|filtered	netbios-dgm
+5353/udp	open	zeroconf
+
+-sO
+1	open	icmp
+6	open	tcp
+17	open	udp
+
+
+Client: 10.2.2.46	00:C0:CA:81:CB:96
+-sT -sU
+21/tcp	open	ftp
+22/tcp	open	ssh
+443/tcp	open	https
+67/udp	open|filtered	dhcps
+631/udp	open|filtered	ipp
+5353/udp	open	zeroconf
+
+-sO
+1	open	icmp
+2	open|filtered	igmp
+6	open	tcp
+17	open	udp
+103	open|filtered	pim
+136	open|filtered	udplite
+219	open|filtered	unknown
