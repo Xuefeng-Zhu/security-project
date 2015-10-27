@@ -1,24 +1,22 @@
 .global _main
 .section .data
-command:
+shell:
 	.asciz "/bin/sh\0"
 .section .text
-argument:
-	.asciz "-i\0"
+
 _main:
 
-push	%ebp
-mov	%esp,%ebp
-subl $12, %esp
+push    %ebp
+mov     %esp,%ebp
 
-movl $command, %esp
-movl $argument, 4(%esp)
-movl $0, 8(%esp)
+subl $0x8, %esp
+movl $shell, -0x8(%ebp)
+movl $0, -0x4(%ebp)
 
-movl $11, %eax
-movl $command, %ebx
-leal 0(%esp), %ecx
-movl $0, %edx
+mov $shell, %ebx
+leal -0x8(%ebp), %ecx
+mov $0, %edx
+mov $11, %eax
 int $0x80
 
 leave

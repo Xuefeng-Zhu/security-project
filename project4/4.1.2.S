@@ -9,6 +9,8 @@ push $0xc001f00d
 push $0xc105ed
 push $0xacce55ed
 call practice
+mov %ebp, %esp
+pop %ebp
 
 leave
 ret
