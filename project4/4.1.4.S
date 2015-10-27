@@ -1,6 +1,6 @@
 .global your_asm_fn
 .section .data
-coolfood: 
+coolfood:
 	.asciz "coolfood\0"
 .section .text
 
@@ -14,9 +14,6 @@ push $coolfood
 push %eax
 push $0xacce55ed
 call practice
-mov %ebp, %esp
-pop %ebp
-
 
 leave
 ret
