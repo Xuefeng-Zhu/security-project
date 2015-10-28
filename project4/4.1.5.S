@@ -9,13 +9,13 @@ _main:
 push    %ebp
 mov     %esp,%ebp
 
-subl $8, %esp
-movl $shell, 0(%esp)
-movl $0, 4(%esp)
+subl $0x8, %esp
+movl $shell, -0x8(%ebp)
+movl $0, -0x4(%ebp)
 
 mov $11, %eax
 mov $shell, %ebx
-leal 0(%esp), %ecx
+leal -0x8(%ebp), %ecx
 mov $0, %edx
 int $0x80
 
