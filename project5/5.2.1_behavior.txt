@@ -1,0 +1,1 @@
+The default Puppy Linux detects that a theft of the hard drive has occurred. Then it wipes the data on the disk. Finally, it resets the system and goes into the initial Puppy Linux set up for installing the OS.
