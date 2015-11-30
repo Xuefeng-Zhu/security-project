@@ -1,0 +1,1 @@
+suicidenote.doc has the same name the note in the victim's machine. Through the bash history, we also can tell that the suspect was sending this file to victim's machine.
