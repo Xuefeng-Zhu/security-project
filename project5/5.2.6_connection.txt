@@ -1,2 +1,3 @@
-It was successful
-known_hosts (in /home/l337h4x0r/.ssh)
+Yes
+ssh_host_ecdsa_key
+ssh_host_ecdsa_key.pub
