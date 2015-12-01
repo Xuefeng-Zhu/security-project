@@ -1,0 +1,4 @@
+nmap
+hydra
+ssh
+scp

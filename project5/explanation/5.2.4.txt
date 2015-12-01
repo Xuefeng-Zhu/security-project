@@ -1,0 +1,5 @@
+Links to nerf guns and hacking were excluded due to neither explicitly pointing to murder as the queries on suicide and murder did. Multiple google searches were included for link completeness even though they are from the same domain. There were still included 5 distinct domains.
+
+For the weapon of choice, the specific nerf gun model is Nerf N Strike Modulus ECS 10 Blaster but the answer was given as just nerf gun due to the example submission in the MP document's format.
+
+As for the method of picking up the gun, it was determined that the suspect was going to order the gun online and then go pick it up in person due to his/her previous searches on where he/she could pick up nerf guns in store.
