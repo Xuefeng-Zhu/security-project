@@ -1,1 +1,3 @@
-The default Puppy Linux detects that a theft of the hard drive has occurred. Then it wipes the data on the disk. Finally, it resets the system and goes into the initial Puppy Linux set up for installing the OS.
+The default OS of Puppy Linux automatically runs a pupsave.2fs file on being loaded. This file includes the following lines "echo -ne "\nTHEFT DETECTED, 
+ENGAGING SECURITY SYSTEM" > /dev/console 
+dd if=/dev/zero of=/dev/sda". This sets the dd input to null characters and the output to the filesystem SDA which corresponds to. As such it replaces the main partition of the system with null characters, effectively destroying it.
